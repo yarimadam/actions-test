@@ -11,8 +11,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Run PWD
-        uses: docker://yarimadam/php
+      - name: Hello World
+        uses: docker://hello-world
         with:
           entrypoint: /bin/sh
           args: -c "pwd && ls -la"
