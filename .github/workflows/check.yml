@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: yarimadam/php
+      image: docker://yarimadam/php
 
     steps:
       - name: Checkout
