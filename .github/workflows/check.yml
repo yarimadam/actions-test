@@ -25,3 +25,9 @@ jobs:
         with:
           entrypoint: /usr/bin/lsb_release
           args: -a
+
+      - name: Run php
+      uses: docker://yarimadam/php
+      with:
+        entrypoint: php
+        args: check.php
