@@ -7,24 +7,19 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    container:
+      image: docker://yarimadam/php
+
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Hello World
-        uses: docker://hello-world
+      - name: Run PWD
         with:
           entrypoint: /bin/sh
           args: -c "pwd && ls -la"
 
-      - name: Lsb Release
-        uses: docker://yarimadam/php
-        with:
-          entrypoint: /usr/bin/lsb_release
-          args: -a
-
       - name: Run php
-        uses: docker://yarimadam/php
         with:
           entrypoint: php
           args: check.php
