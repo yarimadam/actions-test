@@ -14,10 +14,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Run Check
+      - name: Run PWD
         uses: docker://yarimadam/php
         with:
-          entrypoint: /usr/bin/php
-          args: test.php
+          entrypoint: /bin/sh
+          args: pwd && ls -la
 
-        
+      - name: Lsb Release
+        uses: docker://yarimadam/php
+        with:
+          entrypoint: /usr/bin/lsb_release
+          args: -a
