@@ -14,13 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Use Docker
-        uses: docker://yarimadam/php
-
       - name: Run Check
-        run: php check.php
-
-      - name: Docker Check
-        run: cat /proc/1/cgroup | grep docker
+        uses: docker://yarimadam/php
+        with:
+          entrypoint: /usr/bin/php
+          args: test.php
 
         
