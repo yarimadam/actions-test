@@ -15,4 +15,5 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Run Check
+        uses: docker://yarimadam/php
         run: php check.php
