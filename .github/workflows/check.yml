@@ -15,11 +15,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Run PWD
-        with:
-          entrypoint: /bin/sh
-          args: -c "pwd && ls -la"
+        run: /bin/sh -c "pwd && ls -la"
 
       - name: Run php
-        with:
-          entrypoint: php
-          args: check.php
+        run: php check.php
